@@ -11,7 +11,8 @@ export class HWService {
   ) { }
 
   getHW() {
-    return this.http.get('/assets/hwdata.json');
+    //return this.http.get('/assets/hwdata.json');
+    return this.http.get('http://localhost:8080/greeting');
   }
 
 }
