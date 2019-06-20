@@ -11,15 +11,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.distributedtracing.demoback.dataaccess.HelloEntity;
+import com.distributedtracing.demoback.dataaccess.HelloRepository;
+
 @RestController
 public class GreetingController {
 
 	private static final Logger log = LoggerFactory.getLogger(GreetingController.class);
 
+	private final HelloRepository repository;
+	
 	private final RestTemplate restTemplate;
 
-	public GreetingController(final RestTemplate restTemplate) {
+	public GreetingController(final RestTemplate restTemplate, final HelloRepository repository) {
 		super();
+		this.repository = repository;
 		this.restTemplate = restTemplate;
 	}
 
@@ -29,7 +35,8 @@ public class GreetingController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		log.info("Coucou");
+		final HelloEntity hello = repository.findById("123").get();
+		log.info("Found {}", hello);
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 

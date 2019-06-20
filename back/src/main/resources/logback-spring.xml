@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+	<!-- Pour utiliser facilement les couleurs -->
+	<include
+		resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+	<!-- Logger console de Spring Boot -->
+	<include
+		resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+	<!-- Exposition du nom de l'app à la conf Logback (voir http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#_environment_properties) -->
+	<springProperty scope="context"
+		name="spring.application.name" source="spring.application.name" />
+
+
+	<!-- Logs applicatifs -->
+	<root level="ERROR" >
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+	
+</configuration>
