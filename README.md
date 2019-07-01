@@ -9,9 +9,8 @@ Au 20/06 seule la branche Jaeger existe.
 
 | Framework    | AngularJS | Java SpringBoot | Identifiant de traçabilité |
 |:-------------|:---------:|:---------------:|:---------------------------|
-| Jaeger       | color:red KO        | OK              |uber-x-traceid              |
+| Jaeger       | KO        | OK              |uber-x-traceid              |
 
 @TODO : 
 - Rajouter un appel d'API dans un nouveau thread (le new Thread conserve-t-il la traçabilité ?)
 - Rajouter le postage d'un message dans une queue RabbitMQ
-
