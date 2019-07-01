@@ -7,9 +7,9 @@ L'idée est de suivre une trace depuis un front en AngularJS qui appelle une API
 Vous retrouverez le code spécifique à chaque technologie dans les branches git correspondantes. 
 Au 20/06 seule la branche Jaeger existe.
 
-| Framework    | AngularJS | Java SpringBoot | Identifiant de traçabilité |
-|:-------------|:---------:|:---------------:|:---------------------------|
-| Jaeger       | KO        | OK              |uber-x-traceid              |
+| Framework    | AngularJS | Java SpringBoot | Identifiant de traçabilité | Commentaire |
+|:-------------|:---------:|:---------------:|:---------------------------|:------------|
+| Jaeger       | KO        | OK              |uber-x-traceid              | Jaeger fournit une implémentation en NodeJS mais rien pour le browser |
 
 @TODO : 
 - Rajouter un appel d'API dans un nouveau thread (le new Thread conserve-t-il la traçabilité ?)
